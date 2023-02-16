@@ -85,7 +85,7 @@ public final class TestExampleEntityController {
             .isOk());
 
         // The response model contains the expected attributes
-        result.andExpect(MockMvcResultMatchers.jsonPath(".content", Matchers.hasSize(3)));
+        result.andExpect(MockMvcResultMatchers.jsonPath("$.content", Matchers.hasSize(3)));
     }
 
     /**
