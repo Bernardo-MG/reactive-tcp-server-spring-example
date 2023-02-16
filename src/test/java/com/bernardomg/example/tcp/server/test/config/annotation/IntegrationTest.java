@@ -32,13 +32,11 @@ import java.lang.annotation.Target;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.bernardomg.example.tcp.server.Application;
 
 @SpringJUnitConfig
 @SpringBootTest(classes = Application.class)
-@Transactional
 @Rollback
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

@@ -192,10 +192,6 @@
       <!-- ============================================== -->
       <!-- Checkstyle customized rules file -->
       <checkstyle.config.location>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</checkstyle.config.location>
-      <!-- Excludes generated code for Checkstyle -->
-      <checkstyle.excludes>**/generated/**/*</checkstyle.excludes>
-      <!-- Exclusion patterns for SpotBugs -->
-      <spotbugs.excludeFilterFile>${project.basedir}/src/config/spotbugs/spotbugs-exclude.xml</spotbugs.excludeFilterFile>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
@@ -255,75 +251,12 @@
 
    <dependencies>
       <!-- ============================================== -->
-      <!-- ================== SPRING ==================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Spring AOP -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-aop</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring beans -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-beans</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring context -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-context</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring context support -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-context-support</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring Core -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-core</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring JDBC -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-jdbc</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring Data JPA -->
-         <groupId>org.springframework.data</groupId>
-         <artifactId>spring-data-jpa</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring transactions -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-tx</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring Web -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-web</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Spring ORM -->
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-orm</artifactId>
-      </dependency>
-      <!-- ============================================== -->
       <!-- =============== SPRING BOOT ================== -->
       <!-- ============================================== -->
       <dependency>
-         <!-- Spring Boot Starter: Web -->
+         <!-- Spring Boot Starter: Web Flux -->
          <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-web</artifactId>
-         <exclusions>
-            <exclusion>
-               <groupId>ch.qos.logback</groupId>
-               <artifactId>logback-classic</artifactId>
-            </exclusion>
-            <exclusion>
-               <groupId>org.apache.logging.log4j</groupId>
-               <artifactId>log4j-to-slf4j</artifactId>
-            </exclusion>
-         </exclusions>
+         <artifactId>spring-boot-starter-webflux</artifactId>
       </dependency>
       <dependency>
          <!-- Spring Boot Starter: AOP -->
@@ -346,75 +279,6 @@
          <artifactId>spring-boot-devtools</artifactId>
          <scope>runtime</scope>
          <optional>true</optional>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ============== JPA DEPENDENCIES ============== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- JPA API -->
-         <groupId>javax.persistence</groupId>
-         <artifactId>javax.persistence-api</artifactId>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ================ HIBERNATE =================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Hibernate Core -->
-         <groupId>org.hibernate</groupId>
-         <artifactId>hibernate-core</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Hibernate Ehcache -->
-         <groupId>org.hibernate</groupId>
-         <artifactId>hibernate-ehcache</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Hibernate validator -->
-         <groupId>org.hibernate</groupId>
-         <artifactId>hibernate-validator</artifactId>
-         <version>${hibernate.validator.version}</version>
-      </dependency>
-      <dependency>
-         <!-- Hikari CP -->
-         <groupId>com.zaxxer</groupId>
-         <artifactId>HikariCP</artifactId>
-         <exclusions>
-            <exclusion>
-               <groupId>org.slf4j</groupId>
-               <artifactId>slf4j-api</artifactId>
-            </exclusion>
-         </exclusions>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ==================== H2 ====================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- H2 database -->
-         <groupId>com.h2database</groupId>
-         <artifactId>h2</artifactId>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ================ LIQUIBASE =================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Liquibase -->
-         <groupId>org.liquibase</groupId>
-         <artifactId>liquibase-core</artifactId>
-         <exclusions>
-            <exclusion>
-               <groupId>ch.qos.logback</groupId>
-               <artifactId>logback-classic</artifactId>
-            </exclusion>
-         </exclusions>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ================ SERVLET ===================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Servlet API -->
-         <groupId>jakarta.servlet</groupId>
-         <artifactId>jakarta.servlet-api</artifactId>
-         <scope>provided</scope>
       </dependency>
       <!-- ============================================== -->
       <!-- ================== LOMBOK ==================== -->
@@ -454,64 +318,8 @@
          <artifactId>log4j-web</artifactId>
       </dependency>
       <!-- ============================================== -->
-      <!-- ================= JACKSON ==================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Jackson -->
-         <groupId>com.fasterxml.jackson.core</groupId>
-         <artifactId>jackson-core</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Jackson databinding -->
-         <groupId>com.fasterxml.jackson.core</groupId>
-         <artifactId>jackson-databind</artifactId>
-      </dependency>
-      <dependency>
-         <!-- Jackson annotations -->
-         <groupId>com.fasterxml.jackson.core</groupId>
-         <artifactId>jackson-annotations</artifactId>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ================ API DOCS ==================== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Springdocs OpenAPI UI -->
-         <groupId>org.springdoc</groupId>
-         <artifactId>springdoc-openapi-ui</artifactId>
-         <version>${springdoc.version}</version>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ============ APACHE COLLECTIONS ============== -->
-      <!-- ============================================== -->
-      <dependency>
-         <groupId>org.apache.commons</groupId>
-         <artifactId>commons-collections4</artifactId>
-         <version>${apache.commons.collections.version}</version>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- =========== VERSION ENFORCEMENT ============== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- SnakeYAML -->
-         <groupId>org.yaml</groupId>
-         <artifactId>snakeyaml</artifactId>
-         <version>${snakeyaml.version}</version>
-      </dependency>
-      <!-- ============================================== -->
       <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
       <!-- ============================================== -->
-      <dependency>
-         <!-- Hamcrest -->
-         <groupId>org.hamcrest</groupId>
-         <artifactId>hamcrest-core</artifactId>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <!-- JSON Path -->
-         <groupId>com.jayway.jsonpath</groupId>
-         <artifactId>json-path</artifactId>
-         <scope>test</scope>
-      </dependency>
       <dependency>
          <!-- JUnit Jupiter Engine -->
          <groupId>org.junit.jupiter</groupId>
@@ -525,7 +333,7 @@
          <scope>test</scope>
          <exclusions>
             <exclusion>
-               <!-- JUnit -->
+               <!-- JUnit 3 -->
                <groupId>junit</groupId>
                <artifactId>junit</artifactId>
             </exclusion>
@@ -554,6 +362,12 @@
                <artifactId>junit-vintage-engine</artifactId>
             </exclusion>
          </exclusions>
+      </dependency>
+      <dependency>
+         <!-- Reactor test -->
+         <groupId>io.projectreactor</groupId>
+         <artifactId>reactor-test</artifactId>
+         <scope>test</scope>
       </dependency>
    </dependencies>
 

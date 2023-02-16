@@ -1,16 +1,14 @@
-# Reactive TCP Server with Spring
+# Reactive TCP Server with Spring Example
 
-This is a basic Spring web service project created with the use of the [Spring Web Service Maven Archetype](https://github.com/Bernardo-MG/spring-web-service-maven-archetype). It will ease the development of new web services, setting it up for CI through the use of free services: [Github](https://github.com/), [Github Workflow](https://docs.github.com/en/actions/configuring-and-managing-workflows), [Github Packages](https://github.com/features/packages) and [OSS Sonatype](https://oss.sonatype.org/).
+Sets up a Reactive TCP server with Spring Boot.
 
-Before beginning with the new project there are a few things which should be edited:
+To run the project locally use the following Maven command:
 
-- This readme's description has to be adapted to the new project.
-- Project info on the POM should be checked.
-- The various links on the readme, POM and Maven site (for repositories, issues, etc) should be verified.
-- The documentation on the project's [Maven Site](https://maven.apache.org/plugins/maven-site-plugin/) has to be written.
-- The license, if not using the MIT one, should be changed. Remember that this is referenced on the POM, readme and LICENSE files.
+```
+mvn spring-boot:run
+```
 
-Note that the Maven site is using the [Docs Maven Skin](https://github.com/Bernardo-MG/docs-maven-skin), which will have a few configuration requirements of its own.
+Then you can query at [http://localhost:8080/entity](http://localhost:8080/entity), or use the [Swagger UI](http://localhost:8080/swagger-ui.html).
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.example/reactive-tcp-server-spring.svg)][maven-repo]
 
@@ -51,16 +49,6 @@ mvn verify site
 ```
 
 The verify phase is required, otherwise some of the reports won't be generated.
-
-## Usage
-
-To run the project locally use the following Maven command:
-
-```
-mvn spring-boot:run
-```
-
-Then you can query at [http://localhost:8080/entity](http://localhost:8080/entity), or use the [Swagger UI](http://localhost:8080/swagger-ui.html).
 
 ## Collaborate
 
