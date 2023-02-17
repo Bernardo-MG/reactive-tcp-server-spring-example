@@ -21,7 +21,7 @@
    <groupId>com.bernardomg.example</groupId>
    <artifactId>reactive-tcp-server-spring</artifactId>
    <version>0.0.1-SNAPSHOT</version>
-   <packaging>war</packaging>
+   <packaging>jar</packaging>
 
    <name>Reactive TCP Server with Spring</name>
    <description>A reactive TCP Server with Spring</description>
