@@ -25,18 +25,18 @@ public class TcpConfig {
         final TcpServer server;
 
         log.debug("Starting TCP server");
-        
+
         server = TcpServer.create();
-        
+
         server
             // Adds request handler
             .handle(this::handleRequest)
             // Binds to port
             .port(port)
             .bindNow();
-        
+
         log.debug("Started TCP server at port {}", port);
-        
+
         return server;
     }
 
