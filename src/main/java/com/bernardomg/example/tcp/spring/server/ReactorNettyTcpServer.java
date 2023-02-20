@@ -25,14 +25,11 @@
 package com.bernardomg.example.tcp.spring.server;
 
 import java.util.Objects;
-import java.util.function.BiFunction;
 
-import org.reactivestreams.Publisher;
+import com.bernardomg.example.tcp.spring.server.handler.ResponseHandler;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.netty.DisposableServer;
-import reactor.netty.NettyInbound;
-import reactor.netty.NettyOutbound;
 import reactor.netty.tcp.TcpServer;
 
 /**
@@ -44,17 +41,16 @@ import reactor.netty.tcp.TcpServer;
 @Slf4j
 public final class ReactorNettyTcpServer implements Server {
 
-    private final BiFunction<NettyInbound, NettyOutbound, Publisher<Void>> handler;
+    private final ResponseHandler handler;
 
     /**
      * Port which the server will listen to.
      */
-    private final Integer                                                  port;
+    private final Integer         port;
 
-    private DisposableServer                                               server;
+    private DisposableServer      server;
 
-    public ReactorNettyTcpServer(final Integer prt,
-            final BiFunction<NettyInbound, NettyOutbound, Publisher<Void>> hndlr) {
+    public ReactorNettyTcpServer(final Integer prt, final ResponseHandler hndlr) {
         super();
 
         port = Objects.requireNonNull(prt);

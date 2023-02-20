@@ -1,16 +1,16 @@
 
 package com.bernardomg.example.tcp.spring.server.handler;
 
-import java.util.function.BiFunction;
-
 import org.reactivestreams.Publisher;
+import org.springframework.stereotype.Component;
 
 import io.netty.util.CharsetUtil;
 import reactor.core.publisher.Mono;
 import reactor.netty.NettyInbound;
 import reactor.netty.NettyOutbound;
 
-public final class EchoResponseHandler implements BiFunction<NettyInbound, NettyOutbound, Publisher<Void>> {
+@Component
+public final class EchoResponseHandler implements ResponseHandler {
 
     @Override
     public final Publisher<Void> apply(final NettyInbound request, final NettyOutbound response) {

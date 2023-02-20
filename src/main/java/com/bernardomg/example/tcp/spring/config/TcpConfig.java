@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import com.bernardomg.example.tcp.spring.property.TcpProperties;
 import com.bernardomg.example.tcp.spring.server.ReactorNettyTcpServer;
 import com.bernardomg.example.tcp.spring.server.Server;
-import com.bernardomg.example.tcp.spring.server.handler.EchoResponseHandler;
+import com.bernardomg.example.tcp.spring.server.handler.ResponseHandler;
 
 @Configuration
 @EnableConfigurationProperties(TcpProperties.class)
@@ -19,8 +19,8 @@ public class TcpConfig {
     }
 
     @Bean(name = "tcpServer", initMethod = "start", destroyMethod = "stop")
-    public Server getTcpServer(final TcpProperties properties) {
-        return new ReactorNettyTcpServer(properties.getPort(), new EchoResponseHandler());
+    public Server getTcpServer(final TcpProperties properties, final ResponseHandler responseHandler) {
+        return new ReactorNettyTcpServer(properties.getPort(), responseHandler);
     }
 
 }
