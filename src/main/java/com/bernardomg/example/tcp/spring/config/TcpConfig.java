@@ -18,7 +18,7 @@ public class TcpConfig {
         super();
     }
 
-    @Bean(name = "tcpServer", initMethod = "start", destroyMethod = "close")
+    @Bean(name = "tcpServer", initMethod = "start", destroyMethod = "stop")
     public Server getTcpServer(final TcpProperties properties) {
         return new ReactorNettyTcpServer(properties.getPort(), new EchoResponseHandler());
     }

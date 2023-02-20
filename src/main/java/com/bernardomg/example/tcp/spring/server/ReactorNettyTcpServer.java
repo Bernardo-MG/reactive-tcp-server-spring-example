@@ -72,9 +72,6 @@ public final class ReactorNettyTcpServer implements Server {
             .port(port)
             .bindNow();
 
-        server.onDispose()
-            .block();
-
         log.trace("Started server");
     }
 
