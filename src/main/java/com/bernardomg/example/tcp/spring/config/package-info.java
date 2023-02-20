@@ -22,25 +22,8 @@
  * SOFTWARE.
  */
 
-package com.bernardomg.example.tcp.server.test.config;
-
 /**
- * Contains configuration information for the controller URLs.
- *
- * @author Bernardo Mart&iacute;nez Garrido
+ * Configuration classes.
  */
-public final class UrlConfig {
 
-    /**
-     * Entities REST URL.
-     */
-    public static final String ENTITY = "/entity";
-
-    /**
-     * Default constructor to avoid initialization.
-     */
-    private UrlConfig() {
-        super();
-    }
-
-}
+package com.bernardomg.example.tcp.spring.config;

@@ -1,5 +1,5 @@
 
-package com.bernardomg.example.tcp.server.handler;
+package com.bernardomg.example.tcp.spring.server.handler;
 
 import java.util.function.BiFunction;
 
